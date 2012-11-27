@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.tinkerpop</groupId>
+	<artifactId>graphdb-bench</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<url>http://graphdb-bench.tinkerpop.com</url>
+	<name>GraphDB-Bench: A Benchmark Suite for GraphDBs</name>
+	<description>GraphDB-Bench is an extensible benchmarking framework for graph databases
+        Benchmarks are composed of a sequence of operations that can be evaluated over any Blueprints-enabled graph database.
+        Statistics and visualization tools are provided to support the analysis and representation of benchmark results.
+    </description>
+	<developers>
+		<developer>
+			<name>Marko A. Rodriguez</name>
+			<email>marko@markorodriguez.com</email>
+			<url>http://markorodriguez.com</url>
+		</developer>
+		<developer>
+			<name>Alex Averbuch</name>
+			<email>alex.averbuch@gmail.com</email>
+			<url>http://se.linkedin.com/in/alexaverbuch</url>
+		</developer>
+	</developers>
+	<inceptionYear>2010</inceptionYear>
+
+	<properties>
+		<junit-version>4.10</junit-version>
+		<neo4j-version>1.9.M01</neo4j-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- <repositories> -->
+	<!-- <repository> -->
+	<!-- <id>neo4j-release-repository</id> -->
+	<!-- <name>Neo4j Maven 2 release repository</name> -->
+	<!-- <url>http://m2.neo4j.org/content/repositories/releases</url> -->
+	<!-- <releases> -->
+	<!-- <enabled>true</enabled> -->
+	<!-- </releases> -->
+	<!-- <snapshots> -->
+	<!-- <enabled>false</enabled> -->
+	<!-- </snapshots> -->
+	<!-- </repository> -->
+	<!-- </repositories> -->
+
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.reflections</groupId>
+			<artifactId>reflections</artifactId>
+			<version>0.9.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j</artifactId>
+			<version>${neo4j-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-kernel</artifactId>
+			<version>${neo4j-version}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-lgpl</artifactId>
+			<version>1.9.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.java-allocation-instrumenter</groupId>
+			<artifactId>java-allocation-instrumenter</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.8.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-4</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>attached</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
